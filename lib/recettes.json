@@ -1,0 +1,67 @@
+{
+  "recettes": [
+    {
+      "nom": "Hache",
+      "cout": "2 Bois, 2 Tige en métal",
+      "gameplay": "Récolter le bois 3 par 3",
+      "type": "Outil",
+      "description": "Un outil utile"
+    },
+    {
+      "nom": "Pioche",
+      "cout": "2 Bois, 3 Tige en métal",
+      "gameplay": "Récolter les minerais 5 par 5",
+      "type": "Outil",
+      "description": "Un outil utile"
+    },
+    {
+      "nom": "Lingot de fer",
+      "cout": "1 Minerai de fer",
+      "gameplay": "Débloque d’autres recettes",
+      "type": "Matériau",
+      "description": "Un lingot de fer pur"
+    },
+    {
+      "nom": "Plaque de fer",
+      "cout": "3 Minerai de fer pour 2 plaques de métal",
+      "gameplay": "Débloque d’autres recettes",
+      "type": "Matériau",
+      "description": "Une plaque de fer pour la construction"
+    },
+    {
+      "nom": "Lingot de cuivre",
+      "cout": "1 Minerai de cuivre",
+      "gameplay": "Débloque d’autres recettes",
+      "type": "Matériau",
+      "description": "Un lingot de cuivre pur"
+    },
+    {
+      "nom": "Tige en métal",
+      "cout": "1 Lingot de fer",
+      "gameplay": "Débloque d’autres recettes",
+      "type": "Matériau",
+      "description": "Une tige de métal"
+    },
+    {
+      "nom": "Fil électrique",
+      "cout": "1 Lingot de cuivre",
+      "gameplay": "Débloque d’autres recettes",
+      "type": "Composant",
+      "description": "Un fil électrique pour fabriquer des composants électroniques"
+    },
+    {
+      "nom": "Mineur",
+      "cout": "10 Plaque de fer, 5 Fil électrique",
+      "gameplay": "Permet d’extraire automatiquement du minerai de fer ou cuivre",
+      "type": "Bâtiment",
+      "description": "Un bâtiment qui permet d’automatiser le minage"
+    },
+    {
+      "nom": "Fonderie",
+      "cout": "5 Fil électrique, 8 Tige en métal",
+      "gameplay": "Permet de transformer automatiquement du minerai de fer ou cuivre en lingot de fer ou cuivre",
+      "type": "Bâtiment",
+      "description": "Un bâtiment qui permet d’automatiser la production"
+    }
+  ]
+}
