@@ -76,7 +76,7 @@ class _RecettesPageState extends State<RecettesPage> {
               subtitle: Text('${recette.description ?? 'Pas de description'}\nCoût: ${recette.cout ?? 'Coût inconnu'}'),
               trailing: ElevatedButton(
                 onPressed: () {
-                  InventaireManager.ajouterRecette(recette.nom);
+                  Inventaire.ajouterRecette(recette.nom);
                 }, // Le bouton est désactivé par défaut
                 child: const Text('Produire'),
               ),

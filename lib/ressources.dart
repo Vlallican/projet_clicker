@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Ressources extends StatefulWidget {
@@ -19,6 +18,7 @@ class _RessourceState extends State<Ressources> {
     });
   }
 
+  // Affichage des ressources.
   @override
   Widget build(BuildContext context) {
     final int quantite = RessourcesManager().resources[widget.nom] ?? 0;
@@ -50,10 +50,10 @@ class _RessourceState extends State<Ressources> {
 }
 
 class RessourcesManager {
-  static final RessourcesManager _instance = RessourcesManager._internal();
+  static final RessourcesManager instance = RessourcesManager._internal();
 
   factory RessourcesManager() {
-    return _instance;
+    return instance;
   }
 
   RessourcesManager._internal();

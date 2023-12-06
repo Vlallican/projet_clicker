@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'inventaire.dart';
 import 'navigation.dart';
 import 'ressources.dart';
-import 'inventaire.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const NavigationPage(), // Utilisation de NavigationPage
+      home: const NavigationPage(),
     );
   }
 }
@@ -34,6 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var resources = RessourcesManager().resources;
 
+  // Affichage des ressources.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,10 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
           Ressources(couleur: Color(0xffb967969), nom: 'Bois', resources: resources),
           Ressources(couleur: Color(0xffbced4da), nom: 'Minerai de fer', resources: resources),
           Ressources(couleur: Color(0xffbd9480f), nom: 'Minerai de cuivre', resources: resources),
-          if (InventaireManager.inventaire['Lingot de fer'] != null &&
-              InventaireManager.inventaire['Lingot de fer']! >= 1000 &&
-              InventaireManager.inventaire['Lingot de cuivre'] != null &&
-              InventaireManager.inventaire['Lingot de cuivre']! >= 1000)
+          if (Inventaire.inventaire['Lingot de fer'] != null &&
+              Inventaire.inventaire['Lingot de fer']! >= 1000 &&
+              Inventaire.inventaire['Lingot de cuivre'] != null &&
+              Inventaire.inventaire['Lingot de cuivre']! >= 1000)
             Ressources(couleur: Color(0xFF000000), nom: 'Charbon', resources: resources),
         ],
       ),

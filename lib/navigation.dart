@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'recettes.dart';
@@ -12,23 +11,23 @@ class NavigationPage extends StatefulWidget {
 }
 
 class _NavigationPageState extends State<NavigationPage> {
-  int _currentIndex = 0;
-  final List<Widget> _pages = [
-    MyHomePage(title: 'Ressources'), // Page de ressources
-    RecettesPage(),                 // Page de recettes
-    InventairePage(),               // Page d'inventaire
+  int currentIndex = 0;
+  final List<Widget> pages = [
+    MyHomePage(title: 'Ressources'),
+    RecettesPage(),
+    InventairePage(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
-      _currentIndex = index;
+      currentIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_currentIndex],
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -44,8 +43,8 @@ class _NavigationPageState extends State<NavigationPage> {
             label: 'Inventaire',
           ),
         ],
-        currentIndex: _currentIndex,
-        selectedItemColor: Colors.amber[800],
+        currentIndex: currentIndex,
+        selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
     );

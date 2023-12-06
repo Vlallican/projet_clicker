@@ -9,29 +9,36 @@ class InventairePage extends StatefulWidget {
 
 class _InventairePageState extends State<InventairePage> {
   List<MapEntry<String, int>> items = [];
-  bool triNomAscendant = true;
-  bool triQuantiteAscendant = true;
+  bool triNom = true;
+  bool triQuantite = true;
 
   @override
   void initState() {
     super.initState();
-    items = InventaireManager.inventaire.entries.toList();
+    items = Inventaire.inventaire.entries.toList();
   }
 
+  // Tri les recettes par nom.
   void trierParNom() {
     setState(() {
-      items.sort((a, b) => triNomAscendant ? a.key.compareTo(b.key) : b.key.compareTo(a.key));
-      triNomAscendant = !triNomAscendant; // Bascule le sens du tri
+      items.sort((a, b) => triNom ? a.key.compareTo(b.key) : b.key.compareTo(a.key));
+
+      // Change le sens du tri.
+      triNom = !triNom;
     });
   }
 
+  // Tri les recettes par quantités.
   void trierParQuantite() {
     setState(() {
-      items.sort((a, b) => triQuantiteAscendant ? a.value.compareTo(b.value) : b.value.compareTo(a.value));
-      triQuantiteAscendant = !triQuantiteAscendant; // Bascule le sens du tri
+      items.sort((a, b) => triQuantite ? a.value.compareTo(b.value) : b.value.compareTo(a.value));
+
+      // Change le sens du tri.
+      triQuantite = !triQuantite;
     });
   }
 
+  // Affichage de l'inventaire.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,11 +46,11 @@ class _InventairePageState extends State<InventairePage> {
         title: const Text('Inventaire'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(triNomAscendant ? Icons.sort_by_alpha : Icons.sort_by_alpha_outlined),
+            icon: Icon(Icons.sort_by_alpha),
             onPressed: trierParNom,
           ),
           IconButton(
-            icon: Icon(triQuantiteAscendant ? Icons.sort : Icons.sort_outlined),
+            icon: Icon(Icons.sort),
             onPressed: trierParQuantite,
           ),
         ],
@@ -63,11 +70,13 @@ class _InventairePageState extends State<InventairePage> {
   }
 }
 
-class InventaireManager {
+class Inventaire {
   static final Map<String, int> inventaire = {};
 
   static void ajouterRecette(String nom) {
     if (inventaire.containsKey(nom)) {
+
+      // J'ajoute par 100 afin de tester plusu rapidement l'ajout du charbon en ressource sinon pour le jeu ça sera 1.
       inventaire[nom] = inventaire[nom]! + 100;
     } else {
       inventaire[nom] = 1;
